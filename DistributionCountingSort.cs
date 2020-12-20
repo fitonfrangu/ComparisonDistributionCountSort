@@ -13,7 +13,7 @@ namespace ComparisonDistributionCountSort
 
             for (int i = 0; i < arrayLength; i++)
             {
-                returnArray[i] = rnd.Next(1000);
+                returnArray[i] = rnd.Next(arrayLength);
             }
 
             return returnArray;
@@ -21,7 +21,7 @@ namespace ComparisonDistributionCountSort
 
         public static int[] DistributionCountSort(int[] input, int l, int u)
         {
-            var d = new int[u + 1]; // count array ku i shtojme numrimet
+            var d = new int[u - l + 1]; // count array ku i shtojme numrimet
             var S = new int[input.Length];
 
             for (int j = 0; j <= (u - l); j++)
@@ -36,7 +36,7 @@ namespace ComparisonDistributionCountSort
             }
 
             //mbledhja e elementeve paraprake (cumulative frequency distribution)
-            for (int j = 1; j < (u - l); j++)
+            for (int j = 1; j <= (u - l); j++)
             {
                 d[j] = d[j - 1] + d[j];
             }
