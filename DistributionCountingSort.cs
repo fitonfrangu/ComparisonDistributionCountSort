@@ -51,5 +51,14 @@ namespace ComparisonDistributionCountSort
 
             return S;
         }
+
+        public static void PrintNext(int i, int[] array, int length)
+        {
+            if (i <= length - 1)
+            {
+                Console.WriteLine(array[i] + " ");
+                PrintNext(i + 1, array, length);
+            }
+        }
     }
 }
